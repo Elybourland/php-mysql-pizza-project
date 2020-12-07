@@ -45,7 +45,7 @@
     
         <div class="row">
         
-            <?php foreach($pizzas as $pizza) { ?>
+            <?php foreach($pizzas as $pizza): ?>
 
                 <div class="col s6 md3">
                 
@@ -55,11 +55,11 @@
                         
                             <h6><?php echo htmlspecialchars($pizza['title']); ?></h6>
                             <ul>
-                                <?php foreach(explode(',', $pizza['ingredients']) as $ing) { ?>
+                                <?php foreach(explode(',', $pizza['ingredients']) as $ing): ?>
 
                                     <li><?php echo htmlspecialchars($ing); ?></li>
 
-                                <?php } ?>
+                                <?php endforeach; ?>
                             </ul>
                         
                         </div>
@@ -74,7 +74,19 @@
                 
                 </div>
 
-            <?php } ?>
+                <?php endforeach; ?>
+
+                <!-- example of alt syntax (": & end" instead of opening/closing curly brackets) -->
+
+                <!-- <?php if(count($pizzas) >= 2):  ?>
+
+                    <p>there are 2 or more pizzas</p>
+
+                <?php  else:  ?>
+
+                    <p>there are less than 2 pizzas</p>
+
+                <?php endif; ?> -->
         
         </div>
     
