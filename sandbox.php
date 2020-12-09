@@ -2,6 +2,16 @@
 
 // ternary operators
 
+$score = 20;
+
+// if($score > 60) {
+//     echo 'high score!';
+// } else {
+//     echo 'low score, dude!';
+// }
+
+// echo $score > 40 ? 'high score!' : 'low score :(';
+
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +22,8 @@
     <title>PHP Tutorial</title>
 </head>
 <body>
+
+<p><?php echo $score > 40 ? 'high score!' : 'low score :('; ?></p>
     
 </body>
 </html>
