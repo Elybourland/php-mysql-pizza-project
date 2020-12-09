@@ -4,8 +4,8 @@
 
 class User {
 
-    public $email;
-    public $name;
+    private $email;
+    private $name;
 
     public function __construct($name, $email) {
 
@@ -23,6 +23,19 @@ class User {
 
     }
 
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setName($name) {
+        if(is_string($name) && strlen($name) > 1) {
+            $this->name = $name;
+            return "name has been updated to $name";
+        } else {
+            return 'not a valid name';
+        }
+    }
+
 }
 
 // $userOne = new User();
@@ -32,10 +45,16 @@ class User {
 
 $userTwo = new User('yoshi', 'yoshi@thenetninja.co.uk');
 
+// echo $userTwo->getName();
+
+// echo $userTwo->setName(50);
+echo $userTwo->setName('ely');
+echo $userTwo->getName();
+
 // echo $userTwo->name . '<br />';
 // echo $userTwo->email;
 
-$userTwo->login();
+// $userTwo->login();
 
 ?>
 
